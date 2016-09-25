@@ -105,6 +105,7 @@ set(SIGNAL_SOURCE_ADAPTER_SOURCES file_signal_source.cc
 if(PC_GNURADIO_RUNTIME_VERSION VERSION_GREATER 3.7.3)
      set(SIGNAL_SOURCE_ADAPTER_SOURCES ${SIGNAL_SOURCE_ADAPTER_SOURCES}
          two_bit_cpx_file_signal_source.cc
+         two_bit_iprx_file_signal_source.cc
          two_bit_packed_file_signal_source.cc )
 endif(PC_GNURADIO_RUNTIME_VERSION VERSION_GREATER 3.7.3)
 
