@@ -37,6 +37,17 @@ if(NOT CMAKE_PREFIX_PATH)
 endif(NOT CMAKE_PREFIX_PATH)
 
 
+########################################################################
+# Trying to make cmake find the armadillo package compiled by pybombs
+########################################################################
+set(EXTRA_LIBRARY_PATH $ENV{LIBRARY_PATH})
+string(REPLACE ":" ";" EXTRA_LIBRARY_PATH ${EXTRA_LIBRARY_PATH})
+set(EXTRA_INCLUDE_PATH $ENV{LIBRARY_PATH})
+string(REGEX REPLACE "((lib)|(lib64))(\\/)?((:|$))" "include;" EXTRA_INCLUDE_PATH "${EXTRA_INCLUDE_PATH}")
+set(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} "${EXTRA_LIBRARY_PATH}")
+set(CMAKE_INCLUDE_PATH ${CMAKE_INCLUDE_PATH} "${EXTRA_INCLUDE_PATH}")
+
+
 
 ########################################################################
 # Determine optional blocks/libraries to be built (default: not built)
